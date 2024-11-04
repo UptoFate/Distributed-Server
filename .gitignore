@@ -1,0 +1,60 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userprefs
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# Qt specific
+*.pro.user
+*.qmake.stash
+*.moc
+*.cpp
+*.o
+*.o.d
+*.pro.user.*
+*.qmlc
+*.qmlproject.user
+*.ui.h
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+
+# User-specific files
+*.ncb
+*.opendb
+*.tlog
+*.log
+*.ide
+
+# Others
+*.cache
+*.class
+*.dll
+*.exe
+*.pdb
+*.mdb
+*.idb
+*.ilk
+*.sbr
+*.bsc
+*.scc
+*.vsp
+*.vspx
+*.pdb
+*.publish.xml
