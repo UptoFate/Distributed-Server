@@ -21,7 +21,6 @@ yarn.lock
 *.pro.user
 *.qmake.stash
 *.moc
-*.cpp
 *.o
 *.o.d
 *.pro.user.*

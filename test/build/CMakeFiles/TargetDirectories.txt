@@ -1,0 +1,3 @@
+D:/Desktop/test/build/CMakeFiles/qt_cmake.dir
+D:/Desktop/test/build/CMakeFiles/ALL_BUILD.dir
+D:/Desktop/test/build/CMakeFiles/ZERO_CHECK.dir
