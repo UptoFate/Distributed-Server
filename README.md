@@ -1,10 +1,13 @@
-# Distributed-Server
+# Distributed Server
 
-required libs:
-  boost
-  jsoncpp:x64-windows                               1.9.5
-  grpc:x64-windows                                  1.51.1
-  openssl:x64-windows                               3.3.1
-  protobuf:x64-windows                              3.21.12
-  redis-plus-plus:x64-windows                       1.3.12
-  mysql-connector-cpp:x64-windows                   8.0.32
+## Required Libraries
+
+To build and run the Distributed Server, ensure you have the following libraries installed:
+
+- **Boost**
+- **jsoncpp** (x64-windows) - Version 1.9.5
+- **gRPC** (x64-windows) - Version 1.51.1
+- **OpenSSL** (x64-windows) - Version 3.3.1
+- **Protocol Buffers** (x64-windows) - Version 3.21.12
+- **Redis Plus Plus** (x64-windows) - Version 1.3.12
+- **MySQL Connector/C++** (x64-windows) - Version 8.0.32
