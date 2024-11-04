@@ -1,5 +1,7 @@
 # Distributed Server
 
+![image](https://github.com/UptoFate/Distributed-Server/blob/main/imgs/process.png?raw=true)
+
 ## Required Libraries
 
 To build and run the Distributed Server, ensure you have the following libraries installed:
