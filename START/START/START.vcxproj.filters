@@ -70,6 +70,9 @@
     <ClCompile Include="customWidgets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MeshView\MeshView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="START.ui">
@@ -79,6 +82,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="registerdialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="MeshView\MeshView.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
@@ -102,6 +108,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="customWidgets.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="MeshView\MeshView.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

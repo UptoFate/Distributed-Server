@@ -14,6 +14,7 @@
 
 #include "logindialog.h"
 #include "registerdialog.h"
+#include "MeshView/MeshView.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class STARTClass; };
@@ -66,7 +67,7 @@ private:
     Ui::STARTClass *ui;
     LoginDialog* _login_dlg;
     RegisterDialog* _reg_dlg;
-    QWidget* _main_dlg;
+    MeshView* _main_dlg;
 
 public slots:
     void SlotSwitchReg();

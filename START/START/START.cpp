@@ -80,66 +80,6 @@ void START::Init()
     border->show();
 #endif
 
-    //    /* Initialize display area */
-    //    QFont titleFont = QFont("Corbel Light", 24);
-    //    QFontMetrics titleFm(titleFont);
-    //    canvasTitle = new QLineEdit(this);
-    //    canvasTitle->setFont(titleFont);
-    //    canvasTitle->setText("START");
-    //    canvasTitle->setMaxLength(20);
-    //    canvasTitle->setReadOnly(true);
-    //    canvasTitle->setMinimumHeight(titleFm.height());
-    //    canvasTitle->setMaximumWidth(titleFm.size(Qt::TextSingleLine, "START").width() + 10);
-    //    canvasTitle->setStyleSheet("background-color:#00000000;border-style:none;border-width:0px;margin-left:1px;");
-    //    connect(canvasTitle, &QLineEdit::textEdited, canvasTitle, [=](QString text){canvasTitle->setMaximumWidth(titleFm.size(Qt::TextSingleLine, text).width());});
-
-    //    QFont descFont = QFont("Corbel Light", 12);
-    //    QFontMetrics descFm(descFont);
-    //    canvasDesc = new QLineEdit(this);
-    //    canvasDesc->setFont(descFont);
-    //    canvasDesc->setText("Add your first canvas to start");
-    //    canvasDesc->setMaxLength(128);
-    //    canvasDesc->setReadOnly(true);
-    //    canvasDesc->setMinimumHeight(descFm.lineSpacing());
-    //    canvasDesc->setStyleSheet("background-color:#00000000;border-style:none;border-width:0px;");
-
-    //    settingsIcon = new customIcon(":/icons/icons/settings.svg", "settings", 5, this);
-    //    settingsIcon->setMinimumHeight(canvasTitle->height() * 0.7);
-    //    settingsIcon->setMaximumWidth(canvasTitle->height() * 0.7);
-    //    connect(settingsIcon, &customIcon::clicked, this, [=](){
-    //        QPropertyAnimation *rotate = new QPropertyAnimation(settingsIcon, "rotationAngle", this);
-    //        rotate->setDuration(750);
-    //        rotate->setStartValue(0);
-    //        rotate->setEndValue(90);
-    //        rotate->setEasingCurve(QEasingCurve::InOutExpo);
-    //        rotate->start();
-    //        curSettingsPage->slideIn();
-    //    });
-    //    layersIcon = new customIcon(":/icons/icons/layers.svg", "layers", 5, this);
-    //    layersIcon->setMinimumHeight(canvasTitle->height() * 0.7);
-    //    layersIcon->setMaximumWidth(canvasTitle->height() * 0.7);
-
-    //    /* create title */
-    //    QWidget *titleInnerWidget = new QWidget(this);
-    //    titleInnerWidget->setFixedHeight(canvasTitle->height());
-    //    QHBoxLayout *innerLayout = new QHBoxLayout(titleInnerWidget);
-    //    titleInnerWidget->setLayout(innerLayout);
-    //    innerLayout->setContentsMargins(0, 0, 0, 0);
-    //    innerLayout->setSpacing(10);
-    //    innerLayout->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    //    innerLayout->addWidget(canvasTitle);
-    //    innerLayout->addWidget(settingsIcon);
-    //    innerLayout->addWidget(layersIcon);
-
-    //    QWidget *titleWidget = new QWidget(this);
-    //    titleWidget->setMaximumHeight(canvasTitle->height() + canvasDesc->height());
-    //    QVBoxLayout *outerLayout = new QVBoxLayout(titleWidget);
-    //    titleWidget->setLayout(outerLayout);
-    //    outerLayout->setContentsMargins(0, 0, 0, 0);
-    //    outerLayout->setSpacing(0);
-    //    outerLayout->addWidget(titleInnerWidget);
-    //    outerLayout->addWidget(canvasDesc);
-
     ui->displayLayout->addWidget(_login_dlg);
     _reg_dlg = new RegisterDialog(this);
     ui->displayLayout->addWidget(_reg_dlg);
@@ -308,10 +248,12 @@ void  START::SlotSwitchLogin()
 
 void START::SlotSwitchMain()
 {
-    _main_dlg = new QWidget(this);
+    _main_dlg = new MeshView(this);
+    ui->displayLayout->addWidget(_main_dlg);
+    _main_dlg->hide();
     switchWidget(_login_dlg, _main_dlg);
-    //delete _login_dlg;
-    //delete _reg_dlg;
+    delete _login_dlg;
+    delete _reg_dlg;
 }
 
 void START::switchWidget(QWidget* oldWidget, QWidget* newWidget) {
@@ -340,7 +282,7 @@ void START::switchWidget(QWidget* oldWidget, QWidget* newWidget) {
     group->addAnimation(slideInAnimation);
 
     connect(group, &QParallelAnimationGroup::finished, [=]() {
-        oldWidget->hide();
+        //oldWidget->hide();
         delete group;
         });
 

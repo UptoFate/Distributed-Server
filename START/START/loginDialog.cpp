@@ -11,14 +11,15 @@ LoginDialog::LoginDialog(QWidget *parent)
 {
 	ui.setupUi(this);
 
-    textInputItem* username = new textInputItem("用户名:", this);
-    username->setValue("");
-    username->setFixedWidth(330);
-    username->move(30, 0);
-    textInputItem* passwd = new textInputItem("密 码:", this);
-    passwd->setValue("");
-    passwd->setFixedWidth(330);
-    passwd->move(30, 30);
+    //测试ui
+    //textInputItem* username = new textInputItem("用户名:", this);
+    //username->setValue("");
+    //username->setFixedWidth(330);
+    //username->move(30, 0);
+    //textInputItem* passwd = new textInputItem("密 码:", this);
+    //passwd->setValue("");
+    //passwd->setFixedWidth(330);
+    //passwd->move(30, 30);
 
 
 	connect(ui.reg_btn, &QPushButton::clicked, this, &LoginDialog::switchRegister);
@@ -27,6 +28,13 @@ LoginDialog::LoginDialog(QWidget *parent)
 	ui.pass_edit->setEchoMode(QLineEdit::Password);
 
 	connect(ui.login_btn, &QPushButton::clicked, [this]() {
+
+/***************************************/
+        /*无须登录*/
+        emit TcpMgr::GetInstance()->sig_switch_maindlg();
+        return;
+/***************************************/
+
         qDebug() << "login btn clicked";
 
         enableBtn(false);

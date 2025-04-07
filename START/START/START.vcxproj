@@ -32,7 +32,7 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtInstall>6.5.0_msvc2019_64</QtInstall>
-    <QtModules>core;gui;network;widgets;svg</QtModules>
+    <QtModules>core;gui;network;widgets;svg;3dcore;3drender;3dinput;3dextras</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
@@ -57,6 +57,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnabled>false</VcpkgEnabled>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
@@ -84,6 +87,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="customWidgets.cpp" />
+    <ClCompile Include="MeshView\MeshView.cpp" />
     <ClCompile Include="tcpMgr.cpp" />
     <ClCompile Include="ClickedLabel.cpp" />
     <ClCompile Include="Device.cpp" />
@@ -101,6 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="loginDialog.ui" />
+    <QtUic Include="MeshView\MeshView.ui" />
     <QtUic Include="registerdialog.ui" />
     <QtUic Include="START.ui" />
   </ItemGroup>
@@ -116,6 +121,7 @@
     <QtMoc Include="customWidgets.h" />
     <ClInclude Include="Device.h" />
     <ClInclude Include="global.h" />
+    <QtMoc Include="MeshView\MeshView.h" />
     <ClInclude Include="TimerBtn.h" />
     <QtMoc Include="UserMgr.h" />
     <ClInclude Include="util\Properties.h" />
