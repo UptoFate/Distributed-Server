@@ -8,6 +8,15 @@ MeshView::MeshView(QWidget *parent)
 
 MeshView::~MeshView()
 {
+    if (m_3dWindow) {
+        delete m_3dWindow;
+        m_3dWindow = nullptr;
+    }
+
+    if (m_3dContainer) {
+        delete m_3dContainer;
+        m_3dContainer = nullptr;
+    }
 }
 
 void MeshView::onLoadModelClicked() {

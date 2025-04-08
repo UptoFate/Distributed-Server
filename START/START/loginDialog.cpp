@@ -30,7 +30,7 @@ LoginDialog::LoginDialog(QWidget *parent)
 	connect(ui.login_btn, &QPushButton::clicked, [this]() {
 
 /***************************************/
-        /*无须登录*/
+        /*#ifdef DEBUG 无须登录*/
         emit TcpMgr::GetInstance()->sig_switch_maindlg();
         return;
 /***************************************/
